@@ -1,13 +1,21 @@
 <template>
     <div class="container_form">
-        <input type="text">
-        <button>Search</button>
+        <input class="form-control" type="text" placeholder="Cerca film"
+                v-model.trim="inputText"
+                @keyup="$emit('cerca',inputText)"
+            />
+        <button @click.prevent="$emit('cerca',inputText)">Search</button>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Searchbar'
+    name: 'Searchbar',
+    data(){
+        return {
+            inputText: ""
+        }
+    }
 }
 </script>
 
