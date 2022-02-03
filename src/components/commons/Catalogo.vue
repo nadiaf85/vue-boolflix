@@ -1,9 +1,11 @@
 <template>
     <ul class="container_info">
-        <li>{{info.title}}</li>
+        <li v-if="info.title">{{info.title}}</li>
+        <li v-else>{{info.name}}</li>
         <li>{{info.original_title}}</li>
         <li><img :src="languageFlag()" alt=""></li>
         <li>{{info.vote_average}}</li>
+        
     </ul>
 </template>
 
