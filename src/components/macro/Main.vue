@@ -1,11 +1,11 @@
 <template>
     <main>
-        <Searchbar @cerca="sceltaFilm"/>
+        <Searchbar @cerca="filmFiltrati"/>
 
         <Catalogo 
-            v-for="(element, index) in rispostaApi"
+            v-for="(element, index) in filmArray"
             :key="index"
-            :film="element" />
+            :info="element" />
     </main>
 </template>
 
@@ -23,8 +23,8 @@ export default {
     data(){
         return{
             apiUrl:'https://api.themoviedb.org/3/search/movie',
-            rispostaApi: [],
-            inputRicercaFilm: ""
+            filmArray: [],
+            inputRicercaFilm: "*",
         }
     },
     created(){
@@ -36,17 +36,18 @@ export default {
             params: {
                 api_key: '5858800bf2416316499f5e0f4a3abde9',
                 query: this.inputRicercaFilm,
+                language: 'it-IT',
             }
         })
             .then((risposta) => {
-                this.rispostaApi = risposta.data.results
-                console.log(this.rispostaApi);
+                this.filmArray = risposta.data.results
+                console.log(this.filmArray);
             })
             .catch(function (error) {
                 console.log(error);
             });
         },
-        sceltaFilm(inputcerca){
+        filmFiltrati(inputcerca){
             this.inputRicercaFilm = inputcerca;
             this.getFilm()
         }

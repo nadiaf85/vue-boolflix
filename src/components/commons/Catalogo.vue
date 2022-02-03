@@ -1,9 +1,9 @@
 <template>
-    <ul>
-        <li>{{film.title}}</li>
-        <li>{{film.original_title}}</li>
-        <li>{{film.original_language}}</li>
-        <li>{{film.vote_average}}</li>
+    <ul class="container_info">
+        <li>{{info.title}}</li>
+        <li>{{info.original_title}}</li>
+        <li><img :src="languageFlag()" alt=""></li>
+        <li>{{info.vote_average}}</li>
     </ul>
 </template>
 
@@ -11,11 +11,44 @@
 export default {
     name: 'Catalogo',
     props: {
-        'film': Object
+        'info': Object
+    },
+    methods:{
+        languageFlag(){
+            if(this.info.original_language == 'it'){
+                return require("../../assets/img/ita-flag.jpeg")
+            }else if(this.info.original_language == 'en'){
+                return require("../../assets/img/en-flag.jpeg")
+            }else if(this.info.original_language == 'es'){
+                return require("../../assets/img/es-flag.jpg")
+            }else{
+                return require("../../assets/img/bandiera-no.jpeg")
+            }
+        }
     }
 }
 </script>
 
 <style lang="scss" scoped>
     
+.container_info{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    img{
+        width: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+    ul li{
+        list-style-type: none;
+    }
+
+
 </style>
