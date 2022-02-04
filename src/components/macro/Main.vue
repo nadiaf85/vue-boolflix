@@ -42,7 +42,6 @@ export default {
             params: {
                 api_key: '5858800bf2416316499f5e0f4a3abde9',
                 query: this.inputRicercaFilm,
-                language: 'it-IT',
             }
         })
             .then((risposta) => {
