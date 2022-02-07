@@ -1,9 +1,12 @@
 <template>
   <header>
-    <div>
-    <h1>Boolflix</h1>
-
-    <Searchbar @cerca="filmPassati"/>
+    <div class="container">
+      <div class="row d-flex ">
+        <div class="col d-flex justify-content-between align-items-center">
+          <h1>Boolflix</h1>
+          <div class="search"><Searchbar @cerca="filmPassati"/></div>
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -16,9 +19,9 @@ export default {
   components:{
         Searchbar,
       },
-  props: {
-    msg: String
-  },
+  // props: {
+  //   msg: String
+  // },
   methods:{
     filmPassati(inputPassati){
       this.$emit('passaFilm', inputPassati)
@@ -30,14 +33,17 @@ export default {
 
 
 <style lang="scss" scoped>
+@import '../../assets/style/globals.scss';
 
 header{
-  background-color: black;
-  height: 50px;
-
-    h1{
-    text-transform: uppercase;
-    color: red;}
-
+    width: 100%;
+    background-color: black; 
+      
+      h1{
+        color: red;
+        text-transform: uppercase;
+        }
 }
+
+
 </style>

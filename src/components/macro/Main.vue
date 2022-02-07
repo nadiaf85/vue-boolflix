@@ -1,14 +1,18 @@
 <template>
     <main>
-        <Catalogo 
-            v-for="(element, index) in filmArray"
-            :key="index"
-            :info="element" />
+        <div class="container">
+            <div class="row d-flex justify-content-space-around">
+                <Catalogo 
+                    v-for="(element, index) in filmArray"
+                    :key="index"
+                    :info="element" />
 
-        <Catalogo 
-            v-for="(serie, indiceSerie) in serieTvArray"
-            :key="indiceSerie+'bc'"
-            :info="serie" />
+                <Catalogo 
+                    v-for="(serie, indiceSerie) in serieTvArray"
+                    :key="indiceSerie+'bc'"
+                    :info="serie" />
+            </div>
+        </div>
     </main>
 </template>
 
@@ -31,4 +35,8 @@ export default {
 
 <style lang='scss' scoped>
 
+main{
+    min-height: calc(100vh - 56px);
+    background-color: #595959 ;
+}
 </style>
