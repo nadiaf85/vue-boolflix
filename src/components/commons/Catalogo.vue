@@ -2,7 +2,7 @@
     <div class="col-3 d-flex container_card">
         <div class="card">
             <div class="cover">
-                <img :src="'https://image.tmdb.org/t/p/w342/'+info.poster_path" alt="">
+                <img :src="getImage(info.poster_path)" alt="">
             </div>
             <div class="info">
                 <ul>
@@ -37,6 +37,13 @@ export default {
                 return require("../../assets/img/es-flag.jpg")
             }else{
                 return require("../../assets/img/bandiera-no.jpeg")
+            }
+        },
+        getImage(){
+            if(this.info.poster_path==null){
+                return require('../../assets/img/no-image.jpeg')
+            }else{
+                return 'https://image.tmdb.org/t/p/w342/'+ this.info.poster_path
             }
         },
         getStar(){
