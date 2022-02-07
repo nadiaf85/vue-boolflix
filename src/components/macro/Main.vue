@@ -36,7 +36,7 @@ export default {
 <style lang='scss' scoped>
 
 main{
-    min-height: calc(100vh - 56px);
+    min-height: calc(100vh - 60px);
     background-color: #595959 ;
 }
 </style>
