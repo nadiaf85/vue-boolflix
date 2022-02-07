@@ -19,9 +19,6 @@ export default {
   components:{
         Searchbar,
       },
-  // props: {
-  //   msg: String
-  // },
   methods:{
     filmPassati(inputPassati){
       this.$emit('passaFilm', inputPassati)
