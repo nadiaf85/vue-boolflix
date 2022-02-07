@@ -11,8 +11,8 @@
                     <li><strong>Titolo originale: </strong>{{info.original_title}}</li>
                     <li><img :src="languageFlag()" alt=""></li>
                     <li><strong>Voto: </strong>
-                        <span><i v-for="(element,index) in getStar()" :key="index" class="fas fa-star rating-star"></i></span>
-                        <span><i v-for="(element,index) in (5-getStar())" :key="index+'j'" class="far fa-star rating-star"></i></span>
+                        <span><i v-for="(element,index) in getStar(info.vote_average)" :key="index" class="fas fa-star rating-star"></i></span>
+                        <span><i v-for="(element,index) in (5-getStar(info.vote_average))" :key="index+'j'" class="far fa-star rating-star"></i></span>
                     </li>
                     <li><strong>Overview: </strong>{{info.overview}}</li>
                 </ul>
