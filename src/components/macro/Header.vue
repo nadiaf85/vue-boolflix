@@ -34,6 +34,9 @@ export default {
 
 header{
     width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
     background-color: black; 
       
       h1{

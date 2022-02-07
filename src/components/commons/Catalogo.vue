@@ -46,8 +46,8 @@ export default {
                 return 'https://image.tmdb.org/t/p/w342/'+ this.info.poster_path
             }
         },
-        getStar(){
-            return Math.ceil(this.info.vote_average / 2)
+        getStar(voto){
+            return Math.ceil(voto / 2)
         }
     }
 }
