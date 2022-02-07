@@ -10,9 +10,9 @@
                     <li v-else>{{info.name}}</li>
                     <li><strong>Titolo originale: </strong>{{info.original_title}}</li>
                     <li><img :src="languageFlag()" alt=""></li>
-                    <li>
-                        <i v-for="(element,index) in getStar()" :key="index" class="fas fa-star rating-star"></i>
-                        <i v-for="(element,index) in (5-getStar())" :key="index+'j'" class="far fa-star rating-star"></i>
+                    <li><strong>Voto: </strong>
+                        <span><i v-for="(element,index) in getStar()" :key="index" class="fas fa-star rating-star"></i></span>
+                        <span><i v-for="(element,index) in (5-getStar())" :key="index+'j'" class="far fa-star rating-star"></i></span>
                     </li>
                     <li><strong>Overview: </strong>{{info.overview}}</li>
                 </ul>
@@ -91,7 +91,7 @@ export default {
     ul li{
         list-style-type: none;
         color: white;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 400;
     }
 
